@@ -1,3 +1,7 @@
+
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,6 +14,30 @@
  */
 public class venta extends javax.swing.JFrame {
 
+    public JLabel getJl_nombreCajero() {
+        return jl_nombreCajero;
+    }
+
+    public JLabel getJl_nombreCliente() {
+        return jl_nombreCliente;
+    }
+
+    public JTextField getTf_procesando() {
+        return tf_procesando;
+    }
+
+    public void setJl_nombreCajero(JLabel jl_nombreCajero) {
+        this.jl_nombreCajero = jl_nombreCajero;
+    }
+
+    public void setJl_nombreCliente(JLabel jl_nombreCliente) {
+        this.jl_nombreCliente = jl_nombreCliente;
+    }
+
+    public void setTf_procesando(JTextField tf_procesando) {
+        this.tf_procesando = tf_procesando;
+    }
+    
     /**
      * Creates new form venta
      */
@@ -26,17 +54,70 @@ public class venta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jl_nombreCajero = new javax.swing.JLabel();
+        jl_nombreCliente = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        tf_procesando = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaCompra = new javax.swing.JTable();
+
+        jLabel1.setText("jLabel1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jl_nombreCajero.setText("nameCajero");
+
+        jl_nombreCliente.setText("nameCliente");
+
+        jLabel2.setText("Procesando");
+
+        tablaCompra.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Producto", "Cliente", "Tiempo"
+            }
+        ));
+        jScrollPane2.setViewportView(tablaCompra);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jl_nombreCajero)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jl_nombreCliente)
+                .addGap(87, 87, 87))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel2)
+                        .addGap(32, 32, 32)
+                        .addComponent(tf_procesando, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_nombreCajero)
+                    .addComponent(jl_nombreCliente))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(tf_procesando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +159,12 @@ public class venta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel jl_nombreCajero;
+    private javax.swing.JLabel jl_nombreCliente;
+    private javax.swing.JTable tablaCompra;
+    private javax.swing.JTextField tf_procesando;
     // End of variables declaration//GEN-END:variables
 }
