@@ -1,5 +1,6 @@
 
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /*
@@ -14,6 +15,16 @@ import javax.swing.JTextField;
  */
 public class venta extends javax.swing.JFrame {
 
+    public JTable getTablaCompra() {
+        return tablaCompra;
+    }
+
+    public void setTablaCompra(JTable tablaCompra) {
+        this.tablaCompra = tablaCompra;
+    }
+
+    
+    
     public JLabel getJl_nombreCajero() {
         return jl_nombreCajero;
     }

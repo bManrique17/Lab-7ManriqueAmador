@@ -7,7 +7,18 @@ public class Cajero {
     private String nombre,id;
     ArrayList<Orden>listOrdenes = new ArrayList();
     venta ventana;
+    hilo hilo;
 
+    public hilo getHilo() {
+        return hilo;
+    }
+
+    public void setHilo(hilo hilo) {
+        this.hilo = hilo;
+    }
+    
+    
+    
     @Override
     public String toString() {
         return nombre;

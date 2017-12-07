@@ -62,7 +62,7 @@ public class Principal7 extends javax.swing.JFrame {
         cb_clientes = new javax.swing.JComboBox<>();
         jb_crearOrden = new javax.swing.JButton();
         jb_agregarProducto = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jb_procesarOrden = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -253,7 +253,12 @@ public class Principal7 extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Procesar orden");
+        jb_procesarOrden.setText("Procesar orden");
+        jb_procesarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_procesarOrdenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -283,7 +288,7 @@ public class Principal7 extends javax.swing.JFrame {
                 .addContainerGap(86, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_procesarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(181, 181, 181))
         );
         jPanel3Layout.setVerticalGroup(
@@ -305,7 +310,7 @@ public class Principal7 extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(cb_cajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
-                .addComponent(jButton4)
+                .addComponent(jb_procesarOrden)
                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
@@ -330,6 +335,7 @@ public class Principal7 extends javax.swing.JFrame {
         temp.setVentana(new venta());
         temp.getVentana().getJl_nombreCajero().setText(temp.getNombre());
         temp.getVentana().setVisible(true);
+        temp.setHilo(new hilo(temp.getVentana()));
         listaCajeros.add(temp);
         tf_nombreCajero.setText("");tf_idCajero.setText("");
     }//GEN-LAST:event_jb_crearCajeroActionPerformed
@@ -380,6 +386,10 @@ public class Principal7 extends javax.swing.JFrame {
         cb_clientes.removeItemAt(pos);
     }//GEN-LAST:event_jb_agregarProductoActionPerformed
 
+    private void jb_procesarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_procesarOrdenActionPerformed
+        
+    }//GEN-LAST:event_jb_procesarOrdenActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -419,7 +429,6 @@ public class Principal7 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_cajeros;
     private javax.swing.JComboBox<String> cb_clientes;
     private javax.swing.JComboBox<String> cb_productos;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -440,6 +449,7 @@ public class Principal7 extends javax.swing.JFrame {
     private javax.swing.JButton jb_crearCliente;
     private javax.swing.JButton jb_crearOrden;
     private javax.swing.JButton jb_crearProducto;
+    private javax.swing.JButton jb_procesarOrden;
     private javax.swing.JTextField tf_edadCliente;
     private javax.swing.JTextField tf_idCajero;
     private javax.swing.JTextField tf_nombreCajero;
