@@ -38,15 +38,16 @@ public class hilo extends Thread{
     
     @Override
     public void run(){
-        String nCliente = cliente.getNombre();
+        
+        
+        
+        while(true){
+            String nCliente = cliente.getNombre();
         String nCajero = cliente.getOrden().getCajero().getNombre();
         venta actual = cliente.getOrden().getCajero().getVentana();
         actual.getJl_nombreCajero().setText("Cajero: "+nCajero);
         actual.getJl_nombreCliente().setText("Cliente: "+nCliente);
         JTable tabla = actual.getTablaCompra();
-        
-        
-        while(true){
             if(bandera){
                 for (Producto p : cliente.getOrden().getListaProductos()) {
                     actual.getTf_procesando().setText(p.getNombre());
