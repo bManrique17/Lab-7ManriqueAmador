@@ -8,6 +8,10 @@ public class hilo extends Thread{
     private Cliente cliente;
     private boolean bandera;
 
+    public hilo() {
+    }
+
+    
     public boolean isBandera() {
         return bandera;
     }

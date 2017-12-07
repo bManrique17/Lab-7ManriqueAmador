@@ -6,7 +6,7 @@ public class Cliente {
     
     private String nombre,edad;
     private Orden orden;
-    ArrayList<Producto> listProductos = new ArrayList();
+    
 
     @Override
     public String toString() {
@@ -31,9 +31,7 @@ public class Cliente {
         return orden;
     }
 
-    public ArrayList<Producto> getListProductos() {
-        return listProductos;
-    }
+    
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -47,9 +45,7 @@ public class Cliente {
         this.orden = orden;
     }
 
-    public void setListProductos(ArrayList<Producto> listProductos) {
-        this.listProductos = listProductos;
-    }
+   
     
     
     

@@ -335,7 +335,8 @@ public class Principal7 extends javax.swing.JFrame {
         temp.setVentana(new venta());
         temp.getVentana().getJl_nombreCajero().setText(temp.getNombre());
         temp.getVentana().setVisible(true);
-        temp.setHilo(new hilo(temp.getVentana()));
+        temp.setHilo(new hilo());
+        
         listaCajeros.add(temp);
         tf_nombreCajero.setText("");tf_idCajero.setText("");
     }//GEN-LAST:event_jb_crearCajeroActionPerformed
@@ -349,19 +350,26 @@ public class Principal7 extends javax.swing.JFrame {
     private void jb_crearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crearClienteActionPerformed
         Cliente temp = new Cliente(tf_nombreCliente.getText(),tf_edadCliente.getText());
         listaClientes.add(temp);
+        tf_nombreCliente.setText("");tf_edadCliente.setText("");
     }//GEN-LAST:event_jb_crearClienteActionPerformed
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-        if(jTabbedPane1.getSelectedIndex()==2){
+        if(jTabbedPane1.getSelectedIndex()==3){
+            
             DefaultComboBoxModel m1 = (DefaultComboBoxModel) cb_cajeros.getModel();
             DefaultComboBoxModel m2 = (DefaultComboBoxModel) cb_clientes.getModel();
             DefaultComboBoxModel m3 = (DefaultComboBoxModel) cb_productos.getModel();
+            
+            cb_cajeros.setModel(new DefaultComboBoxModel());
+            cb_clientes.setModel(new DefaultComboBoxModel());
+            cb_productos.setModel(new DefaultComboBoxModel());
+            
             for (Cajero c : listaCajeros) {
                 m1.addElement(c);
             }
             
-            for (Cliente c : listaClientes) {
-                m2.addElement(c);
+            for (Cliente cc : listaClientes) {
+                m2.addElement(cc);
             }
             
             for (Producto p : listaProductos) {
@@ -375,18 +383,30 @@ public class Principal7 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jb_crearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crearOrdenActionPerformed
-        Orden o = new Orden(listaCajeros.get(cb_cajeros.getSelectedIndex()),listaClientes.get(cb_clientes.getSelectedIndex()));
+        Orden o = new Orden(listaCajeros.get(cb_cajeros.getSelectedIndex()-1),listaClientes.get(cb_clientes.getSelectedIndex()-1));
         o.getCajero().getListOrdenes().add(o);
+        o.getCliente().setOrden(o);
+        o.getCajero().getHilo().setCliente(o.getCliente()); 
+        oActual = o;
+        o.getCajero().getHilo().start();
     }//GEN-LAST:event_jb_crearOrdenActionPerformed
 
     private void jb_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_agregarProductoActionPerformed
-        int pos = cb_clientes.getSelectedIndex();
-        listaClientes.get(cb_clientes.getSelectedIndex()).getOrden().getListaProductos().add(listaProductos.get(cb_productos.getSelectedIndex()));
-        listaClientes.remove(pos);
-        cb_clientes.removeItemAt(pos);
+        int pos = cb_clientes.getSelectedIndex()-1;
+        ((Cliente)cb_clientes.getSelectedItem()).getOrden().getListaProductos().add((Producto)(cb_productos.getSelectedItem()));
+        listaProductos.remove(pos);
+        
+        DefaultComboBoxModel m3 = new DefaultComboBoxModel();
+        cb_productos.setModel(new DefaultComboBoxModel());
+        for (Producto p : listaProductos) {
+                m3.addElement(p);
+            }
+        cb_productos.setModel(m3);
     }//GEN-LAST:event_jb_agregarProductoActionPerformed
 
     private void jb_procesarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_procesarOrdenActionPerformed
+        oActual.getCajero().getHilo().setBandera(true);
+        
         
     }//GEN-LAST:event_jb_procesarOrdenActionPerformed
 
@@ -458,4 +478,5 @@ public class Principal7 extends javax.swing.JFrame {
     private javax.swing.JTextField tf_precioProducto;
     private javax.swing.JTextField tf_tiempoProcesamiento;
     // End of variables declaration//GEN-END:variables
+    Orden oActual;
 }
