@@ -47,21 +47,22 @@ public class Principal7 extends javax.swing.JFrame {
         jb_crearProducto = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         tf_tiempoProcesamiento = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        cb_productos = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        cb_cajeros = new javax.swing.JComboBox<>();
-        cb_clientes = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         tf_nombreCliente = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         tf_edadCliente = new javax.swing.JTextField();
         jb_crearCliente = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        cb_productos = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        cb_cajeros = new javax.swing.JComboBox<>();
+        cb_clientes = new javax.swing.JComboBox<>();
+        jb_crearOrden = new javax.swing.JButton();
+        jb_agregarProducto = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -177,76 +178,6 @@ public class Principal7 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Creacion de productos", jPanel2);
 
-        jLabel1.setText("Nombre del cliente");
-
-        cb_productos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione>" }));
-
-        jLabel2.setText("Productos");
-
-        jButton1.setText("Agregar a Orden");
-
-        jLabel3.setText("Cajero");
-
-        cb_cajeros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione>" }));
-
-        cb_clientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione>" }));
-
-        jButton2.setText("Crear orden");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cb_productos, 0, 121, Short.MAX_VALUE)
-                            .addComponent(cb_cajeros, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(50, 50, 50)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel1)
-                        .addGap(43, 43, 43)
-                        .addComponent(cb_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(jButton2)))
-                .addContainerGap(85, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(cb_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cb_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(cb_cajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(120, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Ventas", jPanel3);
-
         jLabel9.setText("Nombre del cliente");
 
         jLabel10.setText("Edad");
@@ -295,6 +226,90 @@ public class Principal7 extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Creacion de clientes", jPanel4);
+
+        jLabel1.setText("Nombre del cliente");
+
+        cb_productos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione>" }));
+
+        jLabel2.setText("Productos");
+
+        jLabel3.setText("Cajero");
+
+        cb_cajeros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione>" }));
+
+        cb_clientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione>" }));
+
+        jb_crearOrden.setText("Crear orden");
+        jb_crearOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_crearOrdenActionPerformed(evt);
+            }
+        });
+
+        jb_agregarProducto.setText("Agregar producto");
+        jb_agregarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_agregarProductoActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Procesar orden");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cb_productos, 0, 121, Short.MAX_VALUE)
+                            .addComponent(cb_cajeros, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(58, 58, 58)
+                        .addComponent(jb_agregarProducto))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(jLabel1)
+                        .addGap(43, 43, 43)
+                        .addComponent(cb_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(jb_crearOrden)))
+                .addContainerGap(86, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(181, 181, 181))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cb_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jb_crearOrden)
+                .addGap(25, 25, 25)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jb_agregarProducto))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(cb_cajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addComponent(jButton4)
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Ventas", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -353,6 +368,18 @@ public class Principal7 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
+    private void jb_crearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crearOrdenActionPerformed
+        Orden o = new Orden(listaCajeros.get(cb_cajeros.getSelectedIndex()),listaClientes.get(cb_clientes.getSelectedIndex()));
+        o.getCajero().getListOrdenes().add(o);
+    }//GEN-LAST:event_jb_crearOrdenActionPerformed
+
+    private void jb_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_agregarProductoActionPerformed
+        int pos = cb_clientes.getSelectedIndex();
+        listaClientes.get(cb_clientes.getSelectedIndex()).getOrden().getListaProductos().add(listaProductos.get(cb_productos.getSelectedIndex()));
+        listaClientes.remove(pos);
+        cb_clientes.removeItemAt(pos);
+    }//GEN-LAST:event_jb_agregarProductoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -392,8 +419,7 @@ public class Principal7 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_cajeros;
     private javax.swing.JComboBox<String> cb_clientes;
     private javax.swing.JComboBox<String> cb_productos;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -409,8 +435,10 @@ public class Principal7 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton jb_agregarProducto;
     private javax.swing.JButton jb_crearCajero;
     private javax.swing.JButton jb_crearCliente;
+    private javax.swing.JButton jb_crearOrden;
     private javax.swing.JButton jb_crearProducto;
     private javax.swing.JTextField tf_edadCliente;
     private javax.swing.JTextField tf_idCajero;
