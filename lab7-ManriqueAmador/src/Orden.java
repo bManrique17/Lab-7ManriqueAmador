@@ -12,11 +12,25 @@ import java.util.ArrayList;
  * @author Usuario
  */
 public class Orden {
+
+    public Orden() {
+    }
     
     private Cajero cajero;
     private Cliente cliente;
     ArrayList<Producto>listaProductos = new ArrayList();
+    hilo hilo;
 
+    public hilo getHilo() {
+        return hilo;
+    }
+
+    public void setHilo(hilo hilo) {
+        this.hilo = hilo;
+    }
+    
+    
+    
     public Orden(Cajero cajero, Cliente cliente) {
         this.cajero = cajero;
         this.cliente = cliente;

@@ -6,9 +6,17 @@ import javax.swing.table.DefaultTableModel;
 public class hilo extends Thread{
     
     private Cliente cliente;
-    private boolean bandera;
+    private boolean bandera=false,morir=false;
 
     public hilo() {
+    }
+
+    public void setMorir(boolean morir) {
+        this.morir = morir;
+    }
+
+    public boolean isMorir() {
+        return morir;
     }
 
     
@@ -39,15 +47,15 @@ public class hilo extends Thread{
     @Override
     public void run(){
         
-        
-        
-        while(true){
-            String nCliente = cliente.getNombre();
+        String nCliente = cliente.getNombre();
         String nCajero = cliente.getOrden().getCajero().getNombre();
         venta actual = cliente.getOrden().getCajero().getVentana();
         actual.getJl_nombreCajero().setText("Cajero: "+nCajero);
         actual.getJl_nombreCliente().setText("Cliente: "+nCliente);
         JTable tabla = actual.getTablaCompra();
+        
+        while(true){
+        
             if(bandera){
                 for (Producto p : cliente.getOrden().getListaProductos()) {
                     actual.getTf_procesando().setText(p.getNombre());
@@ -62,8 +70,13 @@ public class hilo extends Thread{
                     actual.getTablaCompra().setModel(m);
                 }
                 bandera = false;
+                
+            }
+            if(morir){
+                break;
             }
             
+            morir=true;
         }
     }
     

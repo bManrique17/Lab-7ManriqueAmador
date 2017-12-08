@@ -335,8 +335,7 @@ public class Principal7 extends javax.swing.JFrame {
         temp.setVentana(new venta());
         temp.getVentana().getJl_nombreCajero().setText(temp.getNombre());
         temp.getVentana().setVisible(true);
-        temp.setHilo(new hilo());
-        
+                
         listaCajeros.add(temp);
         tf_nombreCajero.setText("");tf_idCajero.setText("");
     }//GEN-LAST:event_jb_crearCajeroActionPerformed
@@ -355,14 +354,10 @@ public class Principal7 extends javax.swing.JFrame {
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
         if(jTabbedPane1.getSelectedIndex()==3){
-            
-            DefaultComboBoxModel m1 = (DefaultComboBoxModel) cb_cajeros.getModel();
-            DefaultComboBoxModel m2 = (DefaultComboBoxModel) cb_clientes.getModel();
-            DefaultComboBoxModel m3 = (DefaultComboBoxModel) cb_productos.getModel();
-            
-            cb_cajeros.setModel(new DefaultComboBoxModel());
-            cb_clientes.setModel(new DefaultComboBoxModel());
-            cb_productos.setModel(new DefaultComboBoxModel());
+                                    
+            DefaultComboBoxModel m1 = new DefaultComboBoxModel();
+            DefaultComboBoxModel m2 = new DefaultComboBoxModel();
+            DefaultComboBoxModel m3 = new DefaultComboBoxModel();
             
             for (Cajero c : listaCajeros) {
                 m1.addElement(c);
@@ -383,31 +378,37 @@ public class Principal7 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jb_crearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crearOrdenActionPerformed
-        Orden o = new Orden(listaCajeros.get(cb_cajeros.getSelectedIndex()-1),listaClientes.get(cb_clientes.getSelectedIndex()-1));
+        
+        oActual = new Orden();
+        Orden o = new Orden((Cajero)cb_cajeros.getSelectedItem(),(Cliente)cb_clientes.getSelectedItem());
+        o.setHilo(new hilo());
+        
         o.getCajero().getListOrdenes().add(o);
         o.getCliente().setOrden(o);
-        o.getCajero().getHilo().setCliente(o.getCliente()); 
+        o.getHilo().setCliente(o.getCliente()); 
         oActual = o;
-        o.getCajero().getHilo().start();
+        
     }//GEN-LAST:event_jb_crearOrdenActionPerformed
 
     private void jb_agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_agregarProductoActionPerformed
-        int pos = cb_clientes.getSelectedIndex()-1;
-        ((Cliente)cb_clientes.getSelectedItem()).getOrden().getListaProductos().add((Producto)(cb_productos.getSelectedItem()));
-        listaProductos.remove(pos);
+        
+        Cliente s = ((Cliente)cb_clientes.getSelectedItem());
+        Producto a = ((Producto)cb_productos.getSelectedItem());
+        s.getOrden().getListaProductos().add(a);       
+        listaProductos.remove(a);
         
         DefaultComboBoxModel m3 = new DefaultComboBoxModel();
-        cb_productos.setModel(new DefaultComboBoxModel());
-        for (Producto p : listaProductos) {
+        
+            for (Producto p : listaProductos) {
                 m3.addElement(p);
             }
         cb_productos.setModel(m3);
     }//GEN-LAST:event_jb_agregarProductoActionPerformed
 
     private void jb_procesarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_procesarOrdenActionPerformed
-        oActual.getCajero().getHilo().setBandera(true);
-        
-        
+
+        ((Cliente)cb_clientes.getSelectedItem()).getOrden().getHilo().start();
+        oActual.getHilo().setBandera(true);
     }//GEN-LAST:event_jb_procesarOrdenActionPerformed
 
     /**
